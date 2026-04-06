@@ -1,44 +1,37 @@
-# Virxact Open Skills
+# Khazix Skills
 
-卡兹克（[虚实传媒 Virxact](https://virxact.com)）开源的 AI Skills 合集。
+数字生命卡兹克开源的 AI Skills 合集。
 
-这里是我们自己在用的、经过长期打磨的 Skills，现在决定把它们完整地、一字不改地开源出来。
+这里是我自己在用的、经过长期打磨的 Skills，现在决定把它们完整地、一字不改地开源出来。
 
 ## 什么是 Skill
 
-Skill 是一种可以被 AI 编程工具（如 [Claude Code](https://docs.anthropic.com/en/docs/claude-code)）加载的结构化指令集。它把一个人的方法论、经验、风格偏好蒸馏成一套 AI 可以理解和执行的规则体系，让 AI 在特定场景下按照这套方法论来工作。
+Skill 是遵循 [Agent Skills](https://agentskills.io) 开放标准的结构化指令集，由包含指令、脚本和参考资源的文件夹组成，用于扩展 AI Agent 的能力边界。Agent 会在相关场景下自动加载对应的 Skill，你也可以通过 `/skill-name` 手动调用。
 
-简单来说，Skill = 把一个人的能力打包成 AI 可以复用的模块。
+Skill 的设计理念是**可组合、可移植、按需加载**。多个 Skill 可以协同工作，同一个 Skill 可以跨工具使用。它让你能够把领域专业知识打包成 AI 可以复用的模块，在特定场景下按照这套方法论来执行任务。
 
-## 当前已开源的 Skills
+## 已开源的 Skills
 
-| Skill | 说明 | 路径 |
-|-------|------|------|
-| **kaizike-writer** | 卡兹克公众号长文写作 Skill，包含完整的写作风格规则、四层自检体系、内容方法论和风格示例库 | [`kaizike-writer/`](./kaizike-writer/) |
+| Skill | 说明 |
+|-------|------|
+| [**kaizike-writer**](./kaizike-writer/) | 卡兹克公众号长文写作 Skill，包含完整的写作风格规则、四层自检体系、内容方法论和风格示例库 |
 
-## 安装方法
+## 安装
 
-### Claude Code（推荐）
+### 通过 Agent 安装
 
-1. 下载你想用的 Skill 文件夹（比如 `kaizike-writer/`）
-2. 放到你的 Claude Code 项目的 `.skills/skills/` 目录下
-3. 启动 Claude Code 即可自动加载
+在 Claude Code、OpenCode、Codex、OpenClaw 等支持 Skill 的 Agent 中，直接对话：
 
-```bash
-# 示例：安装 kaizike-writer
-git clone https://github.com/KKKKhazix/open-skills.git
-cp -r open-skills/kaizike-writer /你的项目路径/.skills/skills/
+```
+安装这个 skill：https://github.com/KKKKhazix/khazix-skills
 ```
 
-### 手动使用
+### 手动安装
 
-你也可以直接把 `SKILL.md` 的内容复制到任何支持自定义 Prompt 的 AI 工具中使用。
+1. 在本仓库的 [Releases](https://github.com/KKKKhazix/khazix-skills/releases) 页面下载对应 Skill 的 `.skill` 安装包
+2. 将 `.skill` 文件拖动到你的项目的 `.skills/skills/` 目录下
 
-## 关于开源这件事
-
-这是一个互联网开源精神回归的时代。我们见到无数人、无数大佬，好像回到了 30 年前互联网精神最本质的时代，每个人都在无私分享，把自己的方法、把自己的经验总结成 Skill，分享出来。
-
-我们也想给这个时代贡献一份自己的力量。
+适用于 Claude Code、OpenCode、Codex、OpenClaw 等所有支持 Agent Skills 标准的工具。
 
 ## License
 

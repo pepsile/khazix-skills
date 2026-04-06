@@ -30,15 +30,23 @@ kaizike-writer/
 
 ## 安装
 
-将整个 `kaizike-writer/` 文件夹复制到你的 Claude Code 项目的 `.skills/skills/` 目录下即可。
+### 通过 Agent 安装
 
-```bash
-cp -r kaizike-writer /你的项目路径/.skills/skills/
+在 Claude Code、OpenCode、Codex、OpenClaw 等支持 Skill 的 Agent 中，直接对话：
+
 ```
+安装这个 skill：https://github.com/KKKKhazix/khazix-skills
+```
+
+### 手动安装
+
+在 [Releases](https://github.com/KKKKhazix/khazix-skills/releases) 页面下载 `kaizike-writer.skill` 安装包，拖动到你的项目的 `.skills/skills/` 目录下即可。
+
+适用于 Claude Code、OpenCode、Codex、OpenClaw 等所有支持 Agent Skills 标准的工具。
 
 ## 触发方式
 
-在 Claude Code 中对话时，以下场景会自动触发这个 Skill：
+以下场景会自动触发这个 Skill：
 
 - "帮我写篇文章"
 - "用我的风格写一下"
